@@ -10,6 +10,13 @@ class Historycount extends StatefulWidget {
 class _HistorycountState extends State<Historycount> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+        appBar: AppBar(
+      backgroundColor: Colors.black,
+      title: Text(
+        'History',
+        style: TextStyle(color: Colors.white),
+      ),
+    ));
   }
 }

@@ -1,3 +1,15 @@
+buildscript {
+    ext.kotlin_version = '1.7.0' // เปลี่ยนเป็นเวอร์ชันที่คุณต้องการใช้
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.3' // หรือเวอร์ชันที่ตรงกับโปรเจกต์ของคุณ
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 allprojects {
     repositories {
         google()
@@ -14,5 +26,5 @@ subprojects {
 }
 
 tasks.register("clean", Delete) {
-    delete rootProject.buildDir
+    delete rootProject.buildDir // แก้ไขให้ถูกต้องเป็น buildDir แทน buildDirp
 }
