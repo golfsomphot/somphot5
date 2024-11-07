@@ -37,7 +37,6 @@ dependencies:
   persistent_bottom_nav_bar: ^6.2.1
   settings_ui: ^2.0.2
   device_preview: ^1.2.0
-  flutter_barcode_scanner: ^2.0.0
   permission_handler: ^11.3.1
   shared_preferences: ^2.3.2
 dev_dependencies:

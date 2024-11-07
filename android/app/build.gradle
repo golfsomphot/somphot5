@@ -4,37 +4,31 @@ plugins {
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
 }
- 
-android {
-    compileSdkVersion 35
-    namespace = "com.example.somphot5"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
 
+android {
+    compileSdkVersion 34 // เปลี่ยนเป็นเวอร์ชันที่ต้องการ เช่น 34
+    namespace = "com.example.somphot5"
+    
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+ 
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = JavaVersion.VERSION_17 // เปลี่ยนจาก VERSION_1_8 เป็น VERSION_11
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.somphot5"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 15
-        targetSdk = 24
+        minSdk = 19 // เพิ่มค่า minSdk เป็น 19
+        targetSdk = 34 // อัปเดตเป็นเวอร์ชันล่าสุดที่คุณต้องการใช้
         versionCode = 1
         versionName = "1.0"
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.debug
         }
     }

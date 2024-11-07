@@ -1,14 +1,17 @@
 buildscript {
-    ext.kotlin_version = '1.7.0' // เปลี่ยนเป็นเวอร์ชันที่คุณต้องการใช้
+    ext.kotlin_version = '1.8.0' // อัปเดตเวอร์ชัน Kotlin ตามต้องการ
     repositories {
         google()
         mavenCentral()
     }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.3' // หรือเวอร์ชันที่ตรงกับโปรเจกต์ของคุณ
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.android.tools.build:gradle:8.0.2" // อัปเดตเป็นเวอร์ชันล่าสุด
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0"
     }
 }
+
+
 
 allprojects {
     repositories {

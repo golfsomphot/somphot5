@@ -17,9 +17,9 @@ class _LoginScreenState extends State<LoginScreen> {
     // ตรวจสอบการเข้าสู่ระบบ
     if (username.isNotEmpty && password.isNotEmpty) {
       // เปลี่ยนหน้าไปที่ Navbar
-      // Navigator.of(context).pushReplacement(
-      //   MaterialPageRoute(builder: (context) => Navbar()),
-      // );
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => Navbar()),
+      );
     } else {
       // แสดง Snackbar ถ้าข้อมูลไม่ครบ
       ScaffoldMessenger.of(context).showSnackBar(
