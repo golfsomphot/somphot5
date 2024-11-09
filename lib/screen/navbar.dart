@@ -4,6 +4,7 @@ import 'package:somphot5/screen/chatscreen.dart';
 
 import 'package:somphot5/screen/historycount.dart';
 import 'package:somphot5/screen/home.dart';
+import 'package:somphot5/screen/listchat.dart';
 import 'package:somphot5/screen/login.dart';
 import 'package:somphot5/screen/setting.dart';
 import 'package:somphot5/screen/stockcount.dart';
@@ -27,7 +28,7 @@ class _NavbarState extends State<Navbar> {
       HomeScreen(),
       Historycount(),
       Stockcount(),
-      ChatScreen(),
+      Listchat(),
       Setting(logout: _logout),
     ];
   }
@@ -64,10 +65,21 @@ class _NavbarState extends State<Navbar> {
 
   void _logout() {
     Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(
-          builder: (context) => LoginScreen()), // กลับไปที่ LoginScreen
+      MaterialPageRoute(builder: (context) => LoginScreen()),
       (Route<dynamic> route) => false,
     );
+  }
+
+  void _hideNavBar() {
+    setState(() {
+      _controller.index = -1; // ซ่อน NavBar โดยการตั้งค่าเป็น -1
+    });
+  }
+
+  void _showNavBar() {
+    setState(() {
+      _controller.index = 0; // กลับมาแสดง NavBar
+    });
   }
 
   @override
@@ -80,7 +92,7 @@ class _NavbarState extends State<Navbar> {
       confineToSafeArea: true,
       backgroundColor: Colors.black,
       handleAndroidBackButtonPress: true,
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       stateManagement: true,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(1.0),

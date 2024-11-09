@@ -47,5 +47,9 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>We need access to your camera for scanning barcodes.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to select photos and files.</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 </dict>
 </plist>
